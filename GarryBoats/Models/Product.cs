@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -14,6 +15,9 @@ namespace GarryBoats.Models
         [Display(Name = "Product Name")]
         public string Name { get; set; }
         [Required]
+        [Display(Name = "Description of Product")]
+        public string Description { get; set; }
+        [Required]
         [Display(Name = "# In Stock")]
         public int InventoryCount { get; set; }
         [Required]
@@ -22,5 +26,9 @@ namespace GarryBoats.Models
         [Display(Name = "It is part of a repair")]
         public Boolean IsARepair { get; set; }
 
+    }
+    public class ProductDbContext : DbContext
+    {
+        public DbSet<Product>  Products { get; set; }
     }
 }

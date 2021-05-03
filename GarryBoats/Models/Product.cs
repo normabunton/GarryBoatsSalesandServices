@@ -27,8 +27,5 @@ namespace GarryBoats.Models
         public Boolean IsARepair { get; set; }
 
     }
-    public class ProductDbContext : DbContext
-    {
-        public DbSet<Product>  Products { get; set; }
-    }
+   
 }

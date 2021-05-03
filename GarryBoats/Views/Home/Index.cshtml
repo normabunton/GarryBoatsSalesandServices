@@ -5,18 +5,19 @@
 <div class="jumbotron">
     <h1>GarryBoats - Sales and Services</h1>
     <p class="lead">GarryBoats is a sales and servicing provider for all your boating needs, using the best services and providers for your maintenance and repairs.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    @Html.ActionLink("Learn More About Us", "About")
+    
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Products</h2>
         <p>
-            GarryBoats gives you a powerful, self-service way to maintain or repair your watercraft that
+            Our Products Store, is located in rural Indiana, and has a wide variety of products for your watercraft. GarryBoats gives you a powerful, self-service way to maintain or repair your watercraft that
             enables a quality service and record of repairs and maintanence and gives you full control over your watercraft
-            for enjoyable, lifetime use.
+            for enjoyable, lifetime use.<br />
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        @Html.ActionLink("Check Products", "Index", "Product", null, new { @class = "btn btn-primary btn-large"})
     </div>
     <div class="col-md-4">
         <h2>Your Account</h2>

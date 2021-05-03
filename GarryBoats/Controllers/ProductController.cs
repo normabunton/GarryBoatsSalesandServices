@@ -15,8 +15,12 @@ namespace GarryBoats.Controllers
         
         public ActionResult Index()
         {
-            return View(_db.Products.ToList());
+            List<Product> productList = _db.Products.ToList();
+            List<Product> orderedList = productList.OrderBy(prod => prod.Name).ToList();
+            return View(orderedList);
         }
+
+        //get: Product
         public ActionResult Create()
         {
             return View();

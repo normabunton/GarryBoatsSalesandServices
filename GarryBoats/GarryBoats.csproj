@@ -176,9 +176,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configurations.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductDbContext.cs" />
@@ -264,6 +262,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GarryBoats.Models\GarryBoats.Models.csproj">
+      <Project>{36909fa5-f8cc-4db7-8f0b-1150dba4d712}</Project>
+      <Name>GarryBoats.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GarryBoats.Services\GarryBoats.Services.csproj">
+      <Project>{105946dc-a199-46de-9706-ccbb1fb02135}</Project>
+      <Name>GarryBoats.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

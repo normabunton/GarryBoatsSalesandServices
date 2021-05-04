@@ -40,6 +40,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -54,9 +60,18 @@
     <Compile Include="..\GarryBoats\Migrations\Configurations.cs">
       <Link>Configurations.cs</Link>
     </Compile>
+    <Compile Include="IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GarryBoats.Models\GarryBoats.Models.csproj">
+      <Project>{36909fa5-f8cc-4db7-8f0b-1150dba4d712}</Project>
+      <Name>GarryBoats.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GarryBoats.Services\GarryBoats.Services.csproj">
+      <Project>{105946dc-a199-46de-9706-ccbb1fb02135}</Project>
+      <Name>GarryBoats.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GarryBoats\GarryBoats.csproj">
       <Project>{f57ef205-347d-48a6-9bb6-1761d2cbae3f}</Project>
       <Name>GarryBoats</Name>

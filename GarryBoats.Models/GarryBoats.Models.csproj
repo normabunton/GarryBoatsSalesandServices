@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepairListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

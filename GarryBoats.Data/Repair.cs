@@ -14,10 +14,12 @@ namespace GarryBoats.Data
         [Required]
         public Guid UserId { get; set; }
         [Required]
+        public string RepairPersonId { get; set; }
+        [Required]
         [Display(Name ="Your Repair Details")]
         public string RepairDetails { get; set; }
         [Required]
-        public string location { get; set; }
+        public string Location { get; set; }
         [Required]
         public string Product { get; set; }
         [Required]

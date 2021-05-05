@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using GarryBoats.Models;
+using GarryBoats.Data;
 
 namespace GarryBoats
 {

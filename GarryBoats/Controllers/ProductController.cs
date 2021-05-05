@@ -1,4 +1,6 @@
-﻿using GarryBoats.Models;
+﻿using GarryBoats.Data;
+using GarryBoats.Models;
+using GarryBoats.Service;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,7 +13,8 @@ namespace GarryBoats.Controllers
 {
     public class ProductController : Controller
     {
-        private ProductDbContext _db = new ProductDbContext();
+        private ApplicationDbContext _db = new ApplicationDbContext();
+        private ProductService _svc = new ProductService();
         
         public ActionResult Index()
         {
@@ -28,12 +31,11 @@ namespace GarryBoats.Controllers
         //post: Product/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Product product)
+        public ActionResult Create(ProductCreate product)
         {
             if (ModelState.IsValid)
             {
-                _db.Products.Add(product);
-                _db.SaveChanges();
+                _svc.CreateProduct(product);
                 return RedirectToAction("Index");
             }
             return View(product);

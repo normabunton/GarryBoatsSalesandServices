@@ -9,6 +9,7 @@ C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoat
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\obj\Debug\GarryBoats.Models.csprojAssemblyReference.cache
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\obj\Debug\GarryBoats.Models.csproj.CoreCompileInputs.cache
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\obj\Debug\GarryBoats.Models.csproj.CopyComplete
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\obj\Debug\GarryBoats.Models.dll

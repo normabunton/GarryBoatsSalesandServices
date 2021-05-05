@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GarryBoats.Data", "GarryBoats.Data\GarryBoats.Data.csproj", "{697F8D36-7448-4AEA-8067-641B6781789F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GarryBoats.Models", "GarryBoats.Models\GarryBoats.Models.csproj", "{36909FA5-F8CC-4DB7-8F0B-1150DBA4D712}"
+	ProjectSection(ProjectDependencies) = postProject
+		{105946DC-A199-46DE-9706-CCBB1FB02135} = {105946DC-A199-46DE-9706-CCBB1FB02135}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GarryBoats.Services", "GarryBoats.Services\GarryBoats.Services.csproj", "{105946DC-A199-46DE-9706-CCBB1FB02135}"
 EndProject

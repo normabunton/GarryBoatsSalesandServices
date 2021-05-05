@@ -65,20 +65,6 @@
     <Compile Include="Repair.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GarryBoats.Models\GarryBoats.Models.csproj">
-      <Project>{36909fa5-f8cc-4db7-8f0b-1150dba4d712}</Project>
-      <Name>GarryBoats.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GarryBoats.Services\GarryBoats.Services.csproj">
-      <Project>{105946dc-a199-46de-9706-ccbb1fb02135}</Project>
-      <Name>GarryBoats.Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GarryBoats\GarryBoats.csproj">
-      <Project>{f57ef205-347d-48a6-9bb6-1761d2cbae3f}</Project>
-      <Name>GarryBoats</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

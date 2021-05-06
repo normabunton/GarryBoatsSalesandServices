@@ -10,7 +10,7 @@ namespace GarryBoats.Service
 {
     public class ProductService
     {
-        private readonly string _userid;
+        private readonly Guid _userid;
 
         public bool CreateProduct(ProductCreate model)
         {

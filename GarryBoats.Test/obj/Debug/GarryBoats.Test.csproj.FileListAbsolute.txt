@@ -1,0 +1,13 @@
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Test\bin\Debug\GarryBoats.Test.dll
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Test\bin\Debug\GarryBoats.Test.pdb
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Test\obj\Debug\GarryBoats.Test.csproj.CoreCompileInputs.cache
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Test\obj\Debug\GarryBoats.Test.csproj.CopyComplete
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Test\obj\Debug\GarryBoats.Test.dll
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Test\obj\Debug\GarryBoats.Test.pdb

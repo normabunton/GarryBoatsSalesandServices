@@ -55,9 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProductCreate.cs" />
+    <Compile Include="ProductListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepairCreate.cs" />
     <Compile Include="RepairListItem.cs" />
+    <Compile Include="RepairPersonCreate.cs" />
+    <Compile Include="RepairPersonList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

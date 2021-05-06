@@ -26,5 +26,8 @@ namespace GarryBoats.Data
         [Display(Name = "It is part of a repair")]
         public Boolean IsARepair { get; set; }
 
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
+
     }
 }

@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace GarryBoats.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         private ApplicationDbContext _db = new ApplicationDbContext();

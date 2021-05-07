@@ -176,14 +176,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105052225086_InitialMigration.cs" />
-    <Compile Include="Migrations\202105052225086_InitialMigration.Designer.cs">
-      <DependentUpon>202105052225086_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\ProductDbContext.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -253,6 +247,7 @@
     <Content Include="Views\Repair\Index.cshtml" />
     <Content Include="Views\Repair\Create.cshtml" />
     <Content Include="Views\RepairPerson\Index.cshtml" />
+    <Content Include="Views\RepairPerson\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -283,11 +278,6 @@
       <Project>{cd3fb92f-8f9b-41c1-b6ab-3c1255cc1491}</Project>
       <Name>GarryBoats.Service</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105052225086_InitialMigration.resx">
-      <DependentUpon>202105052225086_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

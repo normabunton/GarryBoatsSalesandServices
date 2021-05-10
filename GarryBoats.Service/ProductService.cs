@@ -21,11 +21,11 @@ namespace GarryBoats.Service
         {
             var entity = new Product()
             {
-                ProductId = model.ProductId,
+                
                 IsARepair = model.IsARepair,
-                Description = model.Description,
+                ProductDescription = model.Description,
                 InventoryCount = model.InventoryCount,
-                Name = model.Name,
+                ProductName = model.Name,
                 Price = model.Price,
                 CreatedUtc = DateTimeOffset.Now
             };
@@ -43,7 +43,7 @@ namespace GarryBoats.Service
                 var query =
                     ctx
                         .Products
-                        .Where(e = e.UserId == _userid)
+                       
                         .Select(
                                 e =>
                                     new ProductListItem
@@ -54,6 +54,24 @@ namespace GarryBoats.Service
                                     }
                           );
                 return query.ToArray();
+            }
+        }
+        public ProductDetail GetProductById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Products
+                    .Single(e => e.ProductId == id);
+                return new Models.ProductDetail
+                {
+                    ProductId = entity.ProductId,
+                    ProductName = entity.ProductName,
+                    ProductDescription = entity.ProductDescription,
+                    Price = entity.Price,
+                    CreatedUtc = entity.CreatedUtc,
+                    ModifiedUtc = entity.ModifiedUtc
+                };
             }
         }
 

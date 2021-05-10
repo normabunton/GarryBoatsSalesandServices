@@ -13,10 +13,10 @@ namespace GarryBoats.Data
         public int ProductId { get; set; }
         [Required]
         [Display(Name = "Product Name")]
-        public string Name { get; set; }
+        public string ProductName { get; set; }
         [Required]
         [Display(Name = "Description of Product")]
-        public string Description { get; set; }
+        public string ProductDescription { get; set; }
         [Required]
         [Display(Name = "# In Stock")]
         public int InventoryCount { get; set; }

@@ -1,5 +1,6 @@
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Contract\bin\Debug\GarryBoats.Contract.dll
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Contract\bin\Debug\GarryBoats.Contract.pdb
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Contract\obj\Debug\GarryBoats.Contract.csprojAssemblyReference.cache
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Contract\obj\Debug\GarryBoats.Contract.csproj.CoreCompileInputs.cache
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Contract\obj\Debug\GarryBoats.Contract.dll
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Contract\obj\Debug\GarryBoats.Contract.pdb

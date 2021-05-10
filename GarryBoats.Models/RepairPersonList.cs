@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace GarryBoats.Models
 {
-    class RepairPersonList
+    public class RepairPersonList
     {
         public int RepairPersonId { get; set; }
         public string RepairPersonName { get; set; }
+        public string RepairPersonLocation { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

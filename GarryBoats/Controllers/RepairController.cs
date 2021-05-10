@@ -44,6 +44,14 @@ namespace GarryBoats.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateRepairService();
+            var model = svc.GetRepairById(id);
+
+            return View(model);
+        }
+
         private RepairService CreateRepairService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

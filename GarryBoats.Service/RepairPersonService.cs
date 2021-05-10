@@ -19,31 +19,31 @@ namespace GarryBoats.Service
         {
             var entity =
                 new RepairPerson()
-                {
-                    RepairPersonId = _repairPersonId,
-                    RepairPersonName = _repairPersonName,
-                    RepairPersonLocation = _repairPersonLocation,
-                    CreateUtc = DateTimeOffset.Now
+                {                  
+                    RepairPersonName = model.RepairPersonName,
+                    RepairPersonLocation = model.RepairPersonLocation,
+                    CreatedUtc = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.RepairPeople.Add(entity);
+                ctx.RepairPersons.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<RepairPersonListItem> GetRepairPeople()
+        public IEnumerable<RepairPersonList> GetRepairPerson()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
-                        .RepairPeople
-                        .Where(e => e.RepairPersonId == _repairPersonId)
+                        .RepairPersons
+                       
                         .Select(
-                            e => new RepairPersonListItem
+                            e => new RepairPersonList
                             {
                                 RepairPersonId = e.RepairPersonId,
                                 RepairPersonName = e.RepairPersonName,
+                                RepairPersonLocation = e.RepairPersonLocation,
                                 CreatedUtc = e.CreatedUtc
                             }
                                 );

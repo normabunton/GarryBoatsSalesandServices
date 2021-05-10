@@ -17,7 +17,7 @@ namespace GarryBoats.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RepairPersonService(userId);
-            var model = service.GetRepairPeople();
+            var model = service.GetRepairPerson();
 
             return View(model);
         }
@@ -39,11 +39,22 @@ namespace GarryBoats.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateRepairPersonService();
+            var model = svc.GetRepairPersonById(id);
+
+            return View(model);
+        }
+
+
         private RepairPersonService CreateRepairPersonService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RepairPersonService(userId);
             return service;
         }
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -30,6 +31,8 @@ namespace GarryBoats.Data
             return new ApplicationDbContext();
         }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Repair> Repairs { get; set; }
+        public DbSet<RepairPerson> RepairPersons { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

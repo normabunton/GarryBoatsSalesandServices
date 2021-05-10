@@ -2,6 +2,7 @@
 using GarryBoats.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,11 +20,11 @@ namespace GarryBoats.Service
         public bool CreateRepair(RepairCreate model)
         {
             var entity = new Repair()
-                {
-                    RepairDescription = model.RepairDescription,
-                    RepairDetails = model.RepairDetails,
-                    CreatedUtc = DateTimeOffset.Now
-                };
+            {
+                RepairDescription = model.RepairDescription,
+                RepairDetails = model.RepairDetails,
+                CreatedUtc = DateTimeOffset.Now
+            };
 
             using (var ctx = new ApplicationDbContext())
             {
@@ -38,7 +39,7 @@ namespace GarryBoats.Service
                 var query =
                     ctx
                         .Repairs
-                        .Where(e = e.UserId == _userId)
+                        .Where(e => e.UserId == _userId)
                         .Select(
                                 e =>
                                     new RepairListItem
@@ -51,5 +52,26 @@ namespace GarryBoats.Service
                 return query.ToArray();
             }
         }
+        public RepairDetail GetRepairById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Repairs
+                        .Single(e => e.RepairId == id);
+                return
+                    new RepairDetail
+                    {
+                        RepairID = entity.RepairId,
+                        RepairName = entity.RepairDescription,
+                        RepairLocation = entity.RepairDetails
+                    };
+            };
+        }
     }
 }
+
+        
+    
+

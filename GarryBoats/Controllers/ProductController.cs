@@ -16,7 +16,7 @@ namespace GarryBoats.Controllers
     public class ProductController : Controller
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
-        private ProductService _svc = new ProductService();
+        
         
         public ActionResult Index()
         {
@@ -43,6 +43,14 @@ namespace GarryBoats.Controllers
             return View(model);
             
         }
+        public ActionResult Details(int id)
+        {
+            var svc = CreateProductService();
+            var model = svc.GetProductById(id);
+
+            return View(model);
+        }
+
 
         private ProductService CreateProductService()
         {
@@ -102,19 +110,6 @@ namespace GarryBoats.Controllers
             }
             return View(product);
         }
-        //get: product/Details/{id}
-        public ActionResult Details (int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Data.Product product = _db.Products.Find(id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            return View(product);
-        }
+        
     }
 }

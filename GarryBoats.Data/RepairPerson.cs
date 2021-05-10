@@ -15,8 +15,9 @@ namespace GarryBoats.Data
         public string RepairPersonName { get; set; }
         [Required]
         public string RepairPersonLocation { get; set; }
-        DateTimeOffset CreatedUtc { get; set; }
-        DateTimeOffset? ModifiedUtc { get; set; }
+
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
 
     }
 }

@@ -55,11 +55,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProductCreate.cs" />
+    <Compile Include="ProductDetail.cs" />
     <Compile Include="ProductListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepairCreate.cs" />
+    <Compile Include="RepairDetail.cs" />
     <Compile Include="RepairListItem.cs" />
     <Compile Include="RepairPersonCreate.cs" />
+    <Compile Include="RepairPersonDetail.cs" />
     <Compile Include="RepairPersonList.cs" />
   </ItemGroup>
   <ItemGroup>

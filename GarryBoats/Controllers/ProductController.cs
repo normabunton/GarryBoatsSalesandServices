@@ -36,9 +36,10 @@ namespace GarryBoats.Controllers
 
             if (service.CreateProduct(model))
             {
+                TempData["SaveResult"] = "Your Product was created";
                 return RedirectToAction("Index");
             };
-
+            ModelState.AddModelError("", "Product could not be created");
             return View(model);
             
         }

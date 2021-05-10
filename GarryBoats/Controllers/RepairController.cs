@@ -37,9 +37,11 @@ namespace GarryBoats.Controllers
 
                 if (service.CreateRepair(model))
                 {
-                    return RedirectToAction("Index");
+                TempData["SaveResult"] = "Your Repair was created";
+                return RedirectToAction("Index");
                 };
-                return View(model);
+            ModelState.AddModelError("", "Repair could not be created");
+            return View(model);
         }
 
         private RepairService CreateRepairService()

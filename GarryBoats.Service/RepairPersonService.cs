@@ -27,7 +27,7 @@ namespace GarryBoats.Service
                 };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.RepairPersons.Add(entity);
+                ctx.RepairPeople.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }

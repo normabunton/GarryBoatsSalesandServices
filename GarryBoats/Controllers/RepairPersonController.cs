@@ -32,8 +32,10 @@ namespace GarryBoats.Controllers
 
             if (service.CreateRepairPerson(model))
             {
+                TempData["SaveResult"] = "Your Repair Person was created";
                 return RedirectToAction("Index");
             };
+            ModelState.AddModelError("", "Repair Person could not be created");
             return View(model);
         }
 

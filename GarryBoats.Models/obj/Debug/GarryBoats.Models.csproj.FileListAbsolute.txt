@@ -3,8 +3,11 @@ C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoat
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\GarryBoats.Models.pdb
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\EntityFramework.dll
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\GarryBoats.Data.dll
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\GarryBoats.Data.pdb
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\GarryBoats.Data.dll.config
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\EntityFramework.xml
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml

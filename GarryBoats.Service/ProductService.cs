@@ -12,9 +12,9 @@ namespace GarryBoats.Service
     {
         private readonly Guid _userid;
 
-        public bool CreateProduct(ProductCreate model)
+        public bool CreateProduct(Data.Product model)
         {
-            var entity = new Product()
+            var entity = new Data.Product()
             {
                 IsARepair = model.IsARepair,
                 Description = model.Description,

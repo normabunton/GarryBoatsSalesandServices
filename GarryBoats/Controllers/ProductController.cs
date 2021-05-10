@@ -19,8 +19,8 @@ namespace GarryBoats.Controllers
         
         public ActionResult Index()
         {
-            List<Product> productList = _db.Products.ToList();
-            List<Product> orderedList = productList.OrderBy(prod => prod.Name).ToList();
+            List<Data.Product> productList = _db.Products.ToList();
+            List<Data.Product> orderedList = productList.OrderBy(prod => prod.Name).ToList();
             return View(orderedList);
         }
 
@@ -32,7 +32,7 @@ namespace GarryBoats.Controllers
         //post: Product/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ProductCreate product)
+        public ActionResult Create(Data.Product product)
         {
             if (ModelState.IsValid)
             {
@@ -48,7 +48,7 @@ namespace GarryBoats.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = _db.Products.Find(id);
+            Data.Product product = _db.Products.Find(id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -60,7 +60,7 @@ namespace GarryBoats.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
-            Product product = _db.Products.Find(id);
+            Data.Product product = _db.Products.Find(id);
             _db.Products.Remove(product);
             _db.SaveChanges();
             return RedirectToAction("Index");
@@ -72,7 +72,7 @@ namespace GarryBoats.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = _db.Products.Find(id);
+            Data.Product product = _db.Products.Find(id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -82,7 +82,7 @@ namespace GarryBoats.Controllers
         //post: product/edit/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit (Product product)
+        public ActionResult Edit (Data.Product product)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace GarryBoats.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = _db.Products.Find(id);
+            Data.Product product = _db.Products.Find(id);
             if (product == null)
             {
                 return HttpNotFound();

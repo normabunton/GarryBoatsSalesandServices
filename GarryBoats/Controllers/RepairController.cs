@@ -1,4 +1,6 @@
 ﻿using GarryBoats.Models;
+using GarryBoats.Service;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +15,13 @@ namespace GarryBoats.Controllers
         // GET: Repair
         public ActionResult Index()
         {
-            var model = new RepairListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RepairService(userId);
+            var model = service.GetRepairs();
+
             return View(model);
         }
+
         //GET method : we are making a request to get the create view
         public ActionResult Create()
         {
@@ -25,12 +31,22 @@ namespace GarryBoats.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(RepairCreate model)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
+            
+                var service = CreateRepairService();
 
-            }
-            return View(model);
+                if (service.CreateRepair(model))
+                {
+                    return RedirectToAction("Index");
+                };
+                return View(model);
         }
 
+        private RepairService CreateRepairService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RepairService(userId);
+            return service;
+        }
     }
 }

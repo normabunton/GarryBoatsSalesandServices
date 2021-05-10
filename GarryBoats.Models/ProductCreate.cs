@@ -12,6 +12,6 @@ namespace GarryBoats.Models
         public string Description { get; set; }
         public int InventoryCount { get; set; }
         public decimal Price { get; set; }
-        public Boolean IsARepair { get; set; }
+        public Boolean ProductId { get; set; }
     }
 }

@@ -31,5 +31,25 @@ namespace GarryBoats.Service
                 return ctx.SaveChanges() == 1;
             }
         }
+        public IEnumerable<RepairListItem> GetRepairs()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Repairs
+                        .Where(e = e.UserId == _userId)
+                        .Select(
+                                e =>
+                                    new RepairListItem
+                                    {
+                                        RepairId = e.RepairId,
+                                        RepairDetails = e.RepairDetails,
+                                        CreatedUtc = e.CreatedUtc
+                                    }
+                          );
+                return query.ToArray();
+            }
+        }
     }
 }

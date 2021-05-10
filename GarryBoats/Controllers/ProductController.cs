@@ -1,6 +1,7 @@
 ﻿using GarryBoats.Data;
 using GarryBoats.Models;
 using GarryBoats.Service;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -19,28 +20,36 @@ namespace GarryBoats.Controllers
         
         public ActionResult Index()
         {
-            List<Data.Product> productList = _db.Products.ToList();
-            List<Data.Product> orderedList = productList.OrderBy(prod => prod.Name).ToList();
-            return View(orderedList);
-        }
-
-        //get: Product
-        public ActionResult Create()
-        {
-            return View();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ProductService(userId);
+            var model = service.GetProducts();
+            return View(model);
         }
         //post: Product/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Data.Product product)
+        public ActionResult Create(ProductCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            var service = CreateProductService();
+
+            if (service.CreateProduct(model))
             {
-                _svc.CreateProduct(product);
                 return RedirectToAction("Index");
-            }
-            return View(product);
+            };
+
+            return View(model);
+            
         }
+
+        private ProductService CreateProductService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ProductService(userId);
+            return service;
+        }
+
         //get: product/delete/{id}
         public ActionResult Delete(int? id)
         {

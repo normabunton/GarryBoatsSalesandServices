@@ -1,2 +1,0 @@
-C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Service\obj\Debug\GarryBoats.Service.csprojAssemblyReference.cache
-C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Service\obj\Debug\GarryBoats.Service.csproj.CoreCompileInputs.cache

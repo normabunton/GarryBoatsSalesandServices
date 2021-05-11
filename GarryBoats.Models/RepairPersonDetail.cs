@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GarryBoats.Models
 {
-    class RepairPersonDetail
+    public class RepairPersonDetail
     {
         public int RepairPersonID { get; set; }
         public string RepairPersonName { get; set; }

@@ -30,7 +30,7 @@ namespace GarryBoats.Service
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<RepairPersonList> GetRepairPerson()
+        public IEnumerable<RepairPersonList> GetRepairPersons()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -56,14 +56,14 @@ namespace GarryBoats.Service
             {
                 var entity =
                     ctx
-                        .Repairs
+                        .RepairPersons
                         .Single(e => e.RepairPersonId == id);
                 return
-                    new RepairDetail
+                    new RepairPersonDetail
                     {
                         RepairPersonID = entity.RepairPersonId,
                         RepairPersonName = entity.RepairPersonName,
-                        RepairPersonLocation = entity.Repa
+                        RepairPersonLocation = entity.RepairPersonLocation
                     };
             };
         }

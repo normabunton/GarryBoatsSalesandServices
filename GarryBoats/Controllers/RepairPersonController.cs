@@ -17,7 +17,7 @@ namespace GarryBoats.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RepairPersonService(userId);
-            var model = service.GetRepairPerson();
+            var model = service.GetRepairPersons();
 
             return View(model);
         }

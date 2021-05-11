@@ -80,7 +80,7 @@ namespace GarryBoats.Service
             {
                 var entity = ctx
                     .Products
-                    .Single(e => e.userId == userId);
+                    .Single(e => e.ProductId == id);
 
                 entity.ProductName = Model.ProductName;
                 entity.ProductDescription = Model.ProductDescription;
@@ -90,6 +90,17 @@ namespace GarryBoats.Service
                 return ctx.SaveChanges() == 1;
             }
         }
+        public bool DeleteProduct(int productId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Products
+                    .Single(e => e.ProductId == id);
 
+                ctx.Products.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

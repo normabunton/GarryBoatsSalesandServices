@@ -81,5 +81,19 @@ namespace GarryBoats.Service
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteRepairPerson(int repairPersonId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .RepairPersons
+                        .Single(e => e.RepairPersonId == id);
+
+                ctx.RepairPersons.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

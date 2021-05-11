@@ -58,30 +58,7 @@ namespace GarryBoats.Controllers
             return service;
         }
 
-        //get: product/delete/{id}
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Data.Product product = _db.Products.Find(id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            return View(product);
-        }
-        //get: product/delete/{id}
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
-        {
-            Data.Product product = _db.Products.Find(id);
-            _db.Products.Remove(product);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        
         //get: product/edit/{id}
         public ActionResult Edit(int? id)
         {
@@ -112,6 +89,33 @@ namespace GarryBoats.Controllers
                 };           
             return View(model);
         }
-        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ProductEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            return View();
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateProductService();
+            var model = svc.GetProductById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateProductService();
+            service.DeleteProduct(id);
+            TempData["Save Result"] = "Your Product Was Deleted";
+            return RedirectToRoute("Index");
+        }
     }
 }

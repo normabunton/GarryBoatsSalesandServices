@@ -72,5 +72,33 @@ namespace GarryBoats.Controllers
                 };
             return View(model);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, RepairEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            return View();
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateRepairService();
+            var model = svc.GetRepairById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateRepairService();
+            service.DeleteRepair(id);
+            TempData["Save Result"] = "Your Repair Was Deleted";
+            return RedirectToRoute("Index");
+        }
     }
 }

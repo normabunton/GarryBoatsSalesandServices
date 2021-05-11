@@ -250,6 +250,11 @@
     <Content Include="Views\RepairPerson\Create.cshtml" />
     <Content Include="Views\RepairPerson\Details.cshtml" />
     <Content Include="Views\Repair\Details.cshtml" />
+    <Content Include="Views\Repair\Edit.cshtml" />
+    <Content Include="Views\RepairPerson\Edit.cshtml" />
+    <Content Include="Views\Repair\Delete.cshtml" />
+    <Content Include="Views\RepairPerson\Delete.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -28,7 +28,7 @@ namespace GarryBoats.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            var service = CreateRepairPersonService();
+            var service = CreateRepairPersonsService();
 
             if (service.CreateRepairPerson(model))
             {
@@ -41,14 +41,14 @@ namespace GarryBoats.Controllers
 
         public ActionResult Details(int id)
         {
-            var svc = CreateRepairPersonService();
+            var svc = CreateRepairPersonsService();
             var model = svc.GetRepairPersonById(id);
 
             return View(model);
         }
 
 
-        private RepairPersonService CreateRepairPersonService()
+        private RepairPersonService CreateRepairPersonsService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RepairPersonService(userId);

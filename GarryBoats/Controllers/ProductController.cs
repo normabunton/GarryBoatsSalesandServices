@@ -50,8 +50,6 @@ namespace GarryBoats.Controllers
 
             return View(model);
         }
-
-
         private ProductService CreateProductService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

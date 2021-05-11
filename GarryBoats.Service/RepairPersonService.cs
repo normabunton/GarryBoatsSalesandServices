@@ -50,5 +50,22 @@ namespace GarryBoats.Service
                 return query.ToArray();
             }
         }
+        public RepairPersonDetail GetRepairPersonById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Repairs
+                        .Single(e => e.RepairPersonId == id);
+                return
+                    new RepairDetail
+                    {
+                        RepairPersonID = entity.RepairPersonId,
+                        RepairPersonName = entity.RepairPersonName,
+                        RepairPersonLocation = entity.Repa
+                    };
+            };
+        }
     }
 }

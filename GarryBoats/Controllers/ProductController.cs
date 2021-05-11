@@ -23,6 +23,7 @@ namespace GarryBoats.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ProductService(userId);
             var model = service.GetProducts();
+
             return View(model);
         }
         //post: Product/Create
@@ -98,15 +99,18 @@ namespace GarryBoats.Controllers
         //post: product/edit/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit (Data.Product product)
+        public ActionResult Edit (int id)
         {
-            if (ModelState.IsValid)
-            {
-                _db.Entry(product).State = EntityState.Modified;
-                _db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(product);
+            var service = CreateProductService();
+            var detail = service.GetProductById(id);
+            var model =
+                new ProductEdit
+                {
+                    ProductName = detail.ProductName,
+                    ProductDescription = detail.ProductDescription,
+                    Price = detail.Price
+                };           
+            return View(model);
         }
         
     }

@@ -69,6 +69,21 @@ namespace GarryBoats.Service
                     };
             };
         }
+
+        public bool UpdateRepair(RepairEdit Model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Repairs
+                    .Single(e => e.UserId == _userId);
+                entity.RepairDescription = Model.RepairDescription;
+                entity.RepairDetails = Model.RepairDetails;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
 

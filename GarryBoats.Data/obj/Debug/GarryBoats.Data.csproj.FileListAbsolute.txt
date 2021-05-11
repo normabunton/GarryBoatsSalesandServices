@@ -9,6 +9,7 @@ C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoat
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Data\obj\Debug\GarryBoats.Data.csprojAssemblyReference.cache
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Data\obj\Debug\GarryBoats.Data.Migrations.initial.resources
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Data\obj\Debug\GarryBoats.Data.Migrations.updted.resources
 C:\Users\te_nj\OneDrive\Desktop\EFA Projects C# Visual Studio\RedBadge\GarryBoats\GarryBoats\GarryBoats.Data\obj\Debug\GarryBoats.Data.csproj.GenerateResource.cache

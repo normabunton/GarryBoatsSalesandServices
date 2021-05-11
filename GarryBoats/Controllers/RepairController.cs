@@ -58,5 +58,19 @@ namespace GarryBoats.Controllers
             var service = new RepairService(userId);
             return service;
         }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateRepairService();
+            var detail = service.GetRepairById(id);
+            var model =
+                new RepairEdit
+                {
+                    RepairDescription = detail.RepairName,
+                    RepairDetails = detail.RepairName,
+                    
+                };
+            return View(model);
+        }
     }
 }

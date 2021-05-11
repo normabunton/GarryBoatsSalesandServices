@@ -248,6 +248,8 @@
     <Content Include="Views\Repair\Create.cshtml" />
     <Content Include="Views\RepairPerson\Index.cshtml" />
     <Content Include="Views\RepairPerson\Create.cshtml" />
+    <Content Include="Views\RepairPerson\Details.cshtml" />
+    <Content Include="Views\Repair\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

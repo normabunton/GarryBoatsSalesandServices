@@ -9,6 +9,35 @@
     @Html.ActionLink("Create New Product", "Create")
 </p>
 
+<div class="product-board">
+    @foreach (var item in Model)
+    {
+    <div class="card-container col-md-3 col-sm-6">
+        <div class="product-card">
+            <div class="product-head text-center">
+                <div>
+                    @Html.DisplayNameFor(model => model.ProductName) |
+                    @Html.DisplayNameFor(model => model.Price)
+                </div>
+            </div>
+        <div class="product-body">
+            <div class="product-desc text-center">
+                <div>
+                    @Html.DisplayNameFor(model => model.ProductDescription)
+                </div>
+                <div class="product-tools">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductId })
+                    @Html.ActionLink("Details", "Details", new { id = item.ProductId })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+</div>
+
 @if (TempData.ContainsKey("SaveResult"))
 {
 <div class="alert alert-success fade in" role="alert">

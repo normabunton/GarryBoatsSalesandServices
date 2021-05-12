@@ -2,31 +2,35 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>GarryBoats - Sales and Services</h1>
-    <p class="lead">GarryBoats is a sales and servicing provider for all your boating needs, using the best services and providers for your maintenance and repairs.</p>
-    @Html.ActionLink("Learn More About Us", "About")
-    
-</div>
+<div class="body">
+    <div class="jumbotron">
+        <h1>GarryBoats - Sales and Services</h1>
+        <p class="lead">GarryBoats is a sales and servicing provider for all your boating needs, using the best services and providers for your maintenance and repairs.</p>
+        @Html.ActionLink("Learn More About Us", "About")
+    </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Products</h2>
-        <p>
-            Our Products Store, is located in rural Indiana, and has a wide variety of products for your watercraft. GarryBoats gives you a powerful, self-service way to maintain or repair your watercraft that
-            enables a quality service and record of repairs and maintanence and gives you full control over your watercraft
-            for enjoyable, lifetime use.<br />
-        </p>
-        @Html.ActionLink("Check Products", "Index", "Product", null, new { @class = "btn btn-primary btn-large"})
-    </div>
-    <div class="col-md-4">
-        <h2>Your Account</h2>
-        <p>Your account is a service provided by GarrBoats that makes it easy to add, and update your watercraft history and provides the tools to enjoy your watercraft for a lifetime with our special products and services.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>24 Hour Services</h2>
-        <p>You can easily find the service provider of your choice  from a company that offers the right mix of features and price for your watercraft needs.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <div class="body">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Products</h2>
+                <p>
+                    Our Products Store, is located in rural Indiana, and has a wide variety of products for your watercraft. GarryBoats gives you a powerful, self-service way to maintain or repair your watercraft that
+                    enables a quality service and record of repairs and maintanence and gives you full control over your watercraft
+                    for enjoyable, lifetime use.<br />
+                </p>
+                @Html.ActionLink("Check Products", "Index", "Product", null, new { @class = "btn btn-primary btn-large" })
+            </div>
+            <div class="col-md-4">
+                <h2>Your Account</h2>
+                <p>Your account is a service provided by GarrBoats that makes it easy to add, and update your watercraft history and provides the tools to enjoy your watercraft for a lifetime with our special products and services.</p>
+                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>24 Hour Services</h2>
+                <p>You can easily find the service provider of your choice  from a company that offers the right mix of features and price for your watercraft needs.</p>
+                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            </div>
+        </div>
     </div>
 </div>

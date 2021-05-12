@@ -10,11 +10,11 @@ namespace GarryBoats.Service
 {
     public class ProductService
     {
-        private readonly Guid _userid;
+        private readonly Guid id;
 
         public ProductService(Guid userId)
         {
-            _userid = userId;
+            id = userId;
         }
 
         public bool CreateProduct(ProductCreate model)
@@ -80,7 +80,7 @@ namespace GarryBoats.Service
             {
                 var entity = ctx
                     .Products
-                    .Single(e => e.ProductId == id);
+                    .Single(e => e.ProductName == Model.ProductName);
 
                 entity.ProductName = Model.ProductName;
                 entity.ProductDescription = Model.ProductDescription;
@@ -96,7 +96,7 @@ namespace GarryBoats.Service
             {
                 var entity = ctx
                     .Products
-                    .Single(e => e.ProductId == id);
+                    .Single(e => e.ProductId == productId);
 
                 ctx.Products.Remove(entity);
                 return ctx.SaveChanges() == 1;

@@ -20,6 +20,7 @@ namespace GarryBoats.Service
             var entity =
                 new RepairPerson()
                 {                  
+                    
                     RepairPersonName = model.RepairPersonName,
                     RepairPersonLocation = model.RepairPersonLocation,
                     CreatedUtc = DateTimeOffset.Now
@@ -72,10 +73,11 @@ namespace GarryBoats.Service
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx
-                    .RepairPersons;
-                    
+                    .RepairPersons
+                    .Single(e => e.RepairPersonId == Model.RepairPersonId);
+
+                entity.RepairPersonName = Model.RepairPersonName;
                 entity.RepairPersonLocation = Model.RepairPersonLocation;
-                
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
@@ -89,7 +91,7 @@ namespace GarryBoats.Service
                 var entity =
                     ctx
                         .RepairPersons
-                        .Single(e => e.RepairPersonId == id);
+                        .Single(e => e.RepairPersonId == repairPersonId);
 
                 ctx.RepairPersons.Remove(entity);
                 return ctx.SaveChanges() == 1;

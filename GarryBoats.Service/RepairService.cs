@@ -91,7 +91,7 @@ namespace GarryBoats.Service
                 var entity =
                     ctx
                         .Repairs
-                        .Single(e => e.RepairId == id);
+                        .Single(e => e.UserId == _userId);
                 ctx.Repairs.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

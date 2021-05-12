@@ -1,12 +1,17 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('Assets/WaterBackgroundImage.jpg');
+}
+.body {
+    background-image: url('Assets/WaterBackgroundImage.jpg');
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -22,3 +27,13 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.product-card {
+    border: 3px solid black;
+    min-height: 175px;
+    margin-bottom: 2em;
+    border-radius: 0.5em;
+    background-image: url('Assets/WaterCardBackground.jpg');
+}
+
+

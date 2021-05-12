@@ -15,9 +15,7 @@ namespace GarryBoats.Controllers
     [Authorize]
     public class ProductController : Controller
     {
-        private ApplicationDbContext _db = new ApplicationDbContext();
-        
-        
+        private ApplicationDbContext _db = new ApplicationDbContext();        
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -83,7 +81,7 @@ namespace GarryBoats.Controllers
             var model =
                 new ProductEdit
                 {
-                    ProductName = detail.ProductName,
+                    ProductId = detail.ProductName,
                     ProductDescription = detail.ProductDescription,
                     Price = detail.Price
                 };           

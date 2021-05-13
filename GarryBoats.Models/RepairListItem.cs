@@ -10,6 +10,7 @@ namespace GarryBoats.Models
     public class RepairListItem
     {
         public int RepairId { get; set; }
+        public string RepairDescription { get; set; }
         public string RepairDetails { get; set; }
         [Display(Name="Created")]
         public DateTimeOffset CreatedUtc { get; set; }

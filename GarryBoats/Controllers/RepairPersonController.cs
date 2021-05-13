@@ -18,15 +18,24 @@ namespace GarryBoats.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RepairPersonService(userId);
             var model = service.GetRepairPersons();
+            _ = new RepairPersonList[0];
 
             return View(model);
         }
-        //GET METHOD
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(RepairPersonCreate model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
             var service = CreateRepairPersonsService();
 

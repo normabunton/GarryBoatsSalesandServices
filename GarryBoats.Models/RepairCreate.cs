@@ -10,10 +10,7 @@ namespace GarryBoats.Models
     public class RepairCreate
     {
         [Required]
-
         public string RepairDescription { get; set; }
-        [Required]
-        [MaxLength(2000, ErrorMessage = "There are too many characters in this field, please add a new repair for more details")]
         public string  RepairDetails { get; set; }
     }
 }

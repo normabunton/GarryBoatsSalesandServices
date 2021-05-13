@@ -57,13 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202105071339578_initial.cs" />
-    <Compile Include="Migrations\202105071339578_initial.Designer.cs">
-      <DependentUpon>202105071339578_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105111144417_updted.cs" />
-    <Compile Include="Migrations\202105111144417_updted.Designer.cs">
-      <DependentUpon>202105111144417_updted.cs</DependentUpon>
+    <Compile Include="Migrations\202105122148466_initial.cs" />
+    <Compile Include="Migrations\202105122148466_initial.Designer.cs">
+      <DependentUpon>202105122148466_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
@@ -76,11 +72,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105071339578_initial.resx">
-      <DependentUpon>202105071339578_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105111144417_updted.resx">
-      <DependentUpon>202105111144417_updted.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105122148466_initial.resx">
+      <DependentUpon>202105122148466_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

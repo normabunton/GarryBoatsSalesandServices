@@ -13,7 +13,7 @@ namespace GarryBoats.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202105071339578_initial"; }
+            get { return "202105122148466_initial"; }
         }
         
         string IMigrationMetadata.Source

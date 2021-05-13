@@ -20,7 +20,6 @@ namespace GarryBoats.Service
             var entity =
                 new RepairPerson()
                 {                  
-                    
                     RepairPersonName = model.RepairPersonName,
                     RepairPersonLocation = model.RepairPersonLocation,
                     CreatedUtc = DateTimeOffset.Now
@@ -38,7 +37,6 @@ namespace GarryBoats.Service
                 var query =
                     ctx
                         .RepairPersons
-                       
                         .Select(
                             e => new RepairPersonList
                             {

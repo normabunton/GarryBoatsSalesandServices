@@ -1,4 +1,5 @@
-﻿using GarryBoats.Models;
+﻿using GarryBoats.Data;
+using GarryBoats.Models;
 using GarryBoats.Service;
 using Microsoft.AspNet.Identity;
 using System;
@@ -27,6 +28,7 @@ namespace GarryBoats.Controllers
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(RepairCreate model)
@@ -66,8 +68,8 @@ namespace GarryBoats.Controllers
             var model =
                 new RepairEdit
                 {
-                    RepairDescription = detail.RepairName,
-                    RepairDetails = detail.RepairName,
+                    RepairDescription = detail.RepairDescription,
+                    RepairDetails = detail.RepairDetails,
                     
                 };
             return View(model);

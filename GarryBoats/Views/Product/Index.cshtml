@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GarryBoats.Data.Product>
+﻿@model IEnumerable<GarryBoats.Models.ProductListItem>
 @{
     ViewBag.Title = " Index ";
 }
@@ -12,72 +12,68 @@
 <div class="product-board">
     @foreach (var item in Model)
     {
-    <div class="card-container col-md-3 col-sm-6">
-        <div class="product-card">
-            <div class="product-head text-center">
-                <div>
-                    @Html.DisplayNameFor(model => model.ProductName) |
-                    @Html.DisplayNameFor(model => model.Price)
+        <div class="card-container col-md-3 col-sm-6">
+            <div class="product-card">
+                <div class="product-head text-center">
+                    <div>
+                        @Html.DisplayNameFor(model => model.ProductName) |
+                        @Html.DisplayNameFor(model => model.Price)
+                    </div>
+                </div>
+                <div class="product-body">
+                    <div class="product-desc text-center">
+                        
+                        <div class="product-tools">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ProductId })
+                            @Html.ActionLink("Details", "Details", new { id = item.ProductId })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        <div class="product-body">
-            <div class="product-desc text-center">
-                <div>
-                    @Html.DisplayNameFor(model => model.ProductDescription)
-                </div>
-                <div class="product-tools">
+            
+        </div>
+    }
+    
+    </div>
+
+    @if (TempData.ContainsKey("SaveResult"))
+    {
+        <div class="alert alert-success fade in" role="alert">
+            @ViewBag.SaveResult
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
+    }
+
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.ProductId })
                     @Html.ActionLink("Details", "Details", new { id = item.ProductId })
                     @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
-
-                </div>
-            </div>
-        </div>
-    </div>
-    }
-</div>
-</div>
-
-@if (TempData.ContainsKey("SaveResult"))
-{
-<div class="alert alert-success fade in" role="alert">
-    @ViewBag.SaveResult
-    <button type="button" class="close" data-dismiss="alert">
-        <span>&times;</span>
-    </button>
-    @TempData["SaveResult"]
-</div>
-}
-
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ProductId})
-                @Html.ActionLink("Details", "Details", new { id = item.ProductId})
-                @Html.ActionLink("Delete", "Delete", new { id = item.ProductId})
-            </td>
-        </tr>
-    }
-</table>
+                </td>
+            </tr>
+        }
+    </table>

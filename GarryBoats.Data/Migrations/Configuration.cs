@@ -9,7 +9,7 @@ namespace GarryBoats.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(GarryBoats.Data.ApplicationDbContext context)

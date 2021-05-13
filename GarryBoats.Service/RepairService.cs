@@ -28,7 +28,7 @@ namespace GarryBoats.Service
 
             using (var ctx = new ApplicationDbContext())
             {
-                //ctx.Repairs.Add(entity);
+                ctx.Repairs.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -64,8 +64,8 @@ namespace GarryBoats.Service
                     new RepairDetail
                     {
                         RepairID = entity.RepairId,
-                        RepairName = entity.RepairDescription,
-                        RepairLocation = entity.RepairDetails
+                        RepairDescription = entity.RepairDescription,
+                        RepairDetails = entity.RepairDetails
                     };
             };
         }

@@ -13,17 +13,17 @@ namespace GarryBoats.Data
         public int RepairId { get; set; }
         [Required]
         public Guid UserId { get; set; }
-        [Required]
-        public string RepairPersonId { get; set; }
+       
+        //public string RepairPersonId { get; set; }
         [Required]
         [Display(Name ="Your Repair Name")]
         public string RepairDetails { get; set; }
         [Required]
         public string RepairDescription { get; set; }
-        [Required]
-        public string Location { get; set; }
-        [Required]
-        public string Product { get; set; }
+        
+        //public string Location { get; set; }
+
+        //public string Product { get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 

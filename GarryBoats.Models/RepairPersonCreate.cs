@@ -13,5 +13,6 @@ namespace GarryBoats.Models
         public string RepairPersonName { get; set; }
         [Required]
         public string  RepairPersonLocation { get; set; }
+        
     }
 }

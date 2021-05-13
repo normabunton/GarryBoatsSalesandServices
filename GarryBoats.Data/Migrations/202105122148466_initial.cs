@@ -12,8 +12,8 @@ namespace GarryBoats.Data.Migrations
                 c => new
                     {
                         ProductId = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false),
-                        Description = c.String(nullable: false),
+                        ProductName = c.String(nullable: false),
+                        ProductDescription = c.String(nullable: false),
                         InventoryCount = c.Int(nullable: false),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         IsARepair = c.Boolean(nullable: false),
@@ -21,6 +21,34 @@ namespace GarryBoats.Data.Migrations
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.ProductId);
+            
+            CreateTable(
+                "dbo.RepairPerson",
+                c => new
+                    {
+                        RepairPersonId = c.Int(nullable: false, identity: true),
+                        RepairPersonName = c.String(nullable: false),
+                        RepairPersonLocation = c.String(nullable: false),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
+                    })
+                .PrimaryKey(t => t.RepairPersonId);
+            
+            CreateTable(
+                "dbo.Repair",
+                c => new
+                    {
+                        RepairId = c.Int(nullable: false, identity: true),
+                        UserId = c.Guid(nullable: false),
+                        RepairPersonId = c.String(),
+                        RepairDetails = c.String(nullable: false),
+                        RepairDescription = c.String(nullable: false),
+                        Location = c.String(nullable: false),
+                        Product = c.String(),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
+                    })
+                .PrimaryKey(t => t.RepairId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -109,6 +137,8 @@ namespace GarryBoats.Data.Migrations
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Repair");
+            DropTable("dbo.RepairPerson");
             DropTable("dbo.Product");
         }
     }

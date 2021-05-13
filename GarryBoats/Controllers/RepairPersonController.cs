@@ -36,15 +36,26 @@ namespace GarryBoats.Controllers
             {
                 return View(model);
             }
-
             var service = CreateRepairPersonsService();
-
             if (service.CreateRepairPerson(model))
             {
                 TempData["SaveResult"] = "Your Repair Person was created";
                 return RedirectToAction("Index");
             };
             ModelState.AddModelError("", "Repair Person could not be created");
+            return View(model);
+        }
+        //post
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(RepairPersonCreate Model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            var service = CreateRepairPersonsService();
+            if (service.CreateRepairPerson(model))
+            {
+                return RedirectToRouteResult("Index");
+            }
             return View(model);
         }
 

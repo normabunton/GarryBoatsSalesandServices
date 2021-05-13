@@ -15,7 +15,8 @@
         <h4>RepairEdit</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.RepairId)
+        @Html.HiddenFor(model => model.RepairDescription)
+        @Html.HiddenFor(model => model.RepairDetails)
 
         <div class="form-group">
             @Html.LabelFor(model => model.RepairDetails, htmlAttributes: new { @class = "control-label col-md-2" })

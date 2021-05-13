@@ -18,7 +18,7 @@ namespace GarryBoats.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RepairPersonService(userId);
             var model = service.GetRepairPersons();
-            _ = new RepairPersonList[0];
+           
 
             return View(model);
         }
@@ -27,7 +27,7 @@ namespace GarryBoats.Controllers
         {
             return View();
         }
-        
+        //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(RepairPersonCreate model)
@@ -36,28 +36,25 @@ namespace GarryBoats.Controllers
             {
                 return View(model);
             }
-            var service = CreateRepairPersonsService();
+            var service = CreateRepairPersonService();
             if (service.CreateRepairPerson(model))
             {
                 TempData["SaveResult"] = "Your Repair Person was created";
                 return RedirectToAction("Index");
             };
             ModelState.AddModelError("", "Repair Person could not be created");
+            //service.CreateRepairPerson(model);
+
             return View(model);
         }
-        //post
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(RepairPersonCreate Model)
+
+        private RepairPersonService CreateRepairPersonService()
         {
-            if (!ModelState.IsValid) return View(model);
-            var service = CreateRepairPersonsService();
-            if (service.CreateRepairPerson(model))
-            {
-                return RedirectToRouteResult("Index");
-            }
-            return View(model);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RepairPersonService(userId);
+            return service;
         }
+
 
         public ActionResult Details(int id)
         {

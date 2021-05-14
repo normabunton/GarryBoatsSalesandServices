@@ -28,12 +28,14 @@
             <div class="product-card  col-md-4 text-center">
                 <h2>Your Account</h2>
                 <p>Your account is a service provided by GarrBoats that makes it easy to add, and update your watercraft history and provides the tools to enjoy your watercraft for a lifetime with our special products and services.</p>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+                
+                @Html.ActionLink("Your Account", "Index", "Repair", null, new { @class = "btn btn-primary btn-large" })
             </div>
             <div class=" product-card  col-md-4 text-center">
                 <h2>24 Hour Services</h2>
                 <p>You can easily find the service provider of your choice  from a company that offers the right mix of features and price for your watercraft needs.</p>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+                
+                @Html.ActionLink("Repair", "Index", "Repair", null, new { @class = "btn btn-primary btn-large" })
             </div>
         </div>
     </div>

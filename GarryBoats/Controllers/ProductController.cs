@@ -15,7 +15,7 @@ namespace GarryBoats.Controllers
     [Authorize]
     public class ProductController : Controller
     {
-        private ApplicationDbContext _db = new ApplicationDbContext();        
+              
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -49,31 +49,6 @@ namespace GarryBoats.Controllers
 
             return View(model);
         }
-        private ProductService CreateProductService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ProductService(userId);
-            return service;
-        }
-
-        
-        //get: product/edit/{id}
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Data.Product product = _db.Products.Find(id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            return View(product);
-        }
-        //post: product/edit/{id}
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Edit (int id)
         {
             var service = CreateProductService();
@@ -81,10 +56,9 @@ namespace GarryBoats.Controllers
             var model =
                 new ProductEdit
                 {
-                    ProductId = detail.ProductName,
-                    ProductDescription = detail.ProductDescription,
-                    Price = detail.Price
-                };           
+                    ProductName = detail.ProductName,
+                    ProductDescription = detail.ProductDescription
+                };
             return View(model);
         }
         [HttpPost]
@@ -92,9 +66,29 @@ namespace GarryBoats.Controllers
         public ActionResult Edit(int id, ProductEdit model)
         {
             if (!ModelState.IsValid) return View(model);
-
+            //if (model.ProductId != id)
+            //{
+            //    ModelState.AddModelError("", "Id Mismatch");
+            //    return View(model);
+            //}
+            var service = CreateProductService();
+            if (service.UpdateProduct(model))
+            {
+                TempData["SaveResult"] = "Your Product was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your product could not be updated");
             return View();
         }
+
+
+        private ProductService CreateProductService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ProductService(userId);
+            return service;
+        }
+
 
         [ActionName("Delete")]
         public ActionResult Delete(int id)

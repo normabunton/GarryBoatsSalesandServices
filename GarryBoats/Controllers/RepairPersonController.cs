@@ -47,29 +47,12 @@ namespace GarryBoats.Controllers
 
             return View(model);
         }
-
-        private RepairPersonService CreateRepairPersonService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new RepairPersonService(userId);
-            return service;
-        }
-
-
         public ActionResult Details(int id)
         {
             var svc = CreateRepairPersonsService();
             var model = svc.GetRepairPersonById(id);
 
             return View(model);
-        }
-
-
-        private RepairPersonService CreateRepairPersonsService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new RepairPersonService(userId);
-            return service;
         }
 
         public ActionResult Edit(int id)
@@ -86,10 +69,39 @@ namespace GarryBoats.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, RepairPersonEdit model)
+        public ActionResult Edit (int id, RepairPersonEdit model)
         {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.RepairPersonId != id)
+            {
+                ModelState.AddModelError("", "Repair Person could not be edited");
+
+                return View(model);
+            }
             return View();
         }
+
+        private RepairPersonService CreateRepairPersonService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RepairPersonService(userId);
+            return service;
+        }
+
+
+        
+
+
+        private RepairPersonService CreateRepairPersonsService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RepairPersonService(userId);
+            return service;
+        }
+
+       
+       
 
         [ActionName ("Delete")]
         public ActionResult Delete(int id)

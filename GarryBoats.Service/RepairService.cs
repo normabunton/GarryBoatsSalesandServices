@@ -76,7 +76,8 @@ namespace GarryBoats.Service
             {
                 var entity = ctx
                     .Repairs
-                    .Single(e => e.UserId == _userId);
+                    .Single(e => e.RepairId == Model.RepairId);
+
                 entity.RepairDescription = Model.RepairDescription;
                 entity.RepairDetails = Model.RepairDetails;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;

@@ -54,13 +54,6 @@ namespace GarryBoats.Controllers
             return View(model);
         }
 
-        private RepairService CreateRepairService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new RepairService(userId);
-            return service;
-        }
-
         public ActionResult Edit(int id)
         {
             var service = CreateRepairService();
@@ -70,7 +63,7 @@ namespace GarryBoats.Controllers
                 {
                     RepairDescription = detail.RepairDescription,
                     RepairDetails = detail.RepairDetails,
-                    
+
                 };
             return View(model);
         }
@@ -79,9 +72,23 @@ namespace GarryBoats.Controllers
         public ActionResult Edit(int id, RepairEdit model)
         {
             if (!ModelState.IsValid) return View(model);
+            if(model.RepairId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
 
+            }
             return View();
         }
+        private RepairService CreateRepairService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RepairService(userId);
+            return service;
+        }
+
+        
+        
 
         [ActionName("Delete")]
         public ActionResult Delete(int id)

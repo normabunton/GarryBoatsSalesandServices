@@ -15,15 +15,21 @@ namespace GarryBoats.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "All About US!";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact Us";
 
+            return View();
+        }
+
+        public ActionResult Repair()
+        {
+            ViewBag.Message = "All your Repairs in one Stop";
             return View();
         }
     }

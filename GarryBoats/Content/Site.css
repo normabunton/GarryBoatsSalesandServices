@@ -1,10 +1,11 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url('Assets/WaterBackgroundImage.jpg');
+   
 }
 .body {
     background-image: url('Assets/WaterBackgroundImage.jpg');
+    
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -29,11 +30,33 @@ textarea {
 }
 
 .product-card {
-    border: 3px solid black;
-    min-height: 175px;
+    border: 1px solid black;
+    color: white !important;
+    border-radius: 50%;
+    min-height: 275px;
     margin-bottom: 2em;
+    max-width: 25em;
     border-radius: 0.5em;
     background-image: url('Assets/WaterCardBackground.jpg');
+    margin: 1em;
+    align-content: center;
+}
+
+img {
+    opacity: 0.1;
+}
+
+    .text-center h2, .text-center p {
+        color: white !important;
+    }
+
+.jumbotron {
+    border: 3px solid black;
+    background-color: dimgrey;
+}
+
+.row {
+    font: white;
 }
 
 

@@ -1,14 +1,15 @@
-﻿@model IEnumerable<GarryBoats.Models.RepairPersonListItem>
-
-@*@{
-    ViewBag.Title = "Index";
+﻿@model IEnumerable<GarryBoats.Models.RepairPersonList>
+@{
+    ViewBag.Title = " Index ";
 }
 
-<h2>Repair Person Index</h2>*@
+<h2>Repair Person Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Repair Person", "Create")
 </p>
+
+
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">

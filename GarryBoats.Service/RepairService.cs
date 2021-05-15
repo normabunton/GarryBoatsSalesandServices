@@ -39,12 +39,13 @@ namespace GarryBoats.Service
                 var query =
                     ctx
                         .Repairs
-                        .Where(e => e.UserId == _userId)
+                        
                         .Select(
                                 e =>
                                     new RepairListItem
                                     {
                                         RepairId = e.RepairId,
+                                        RepairDescription = e.RepairDescription,
                                         RepairDetails = e.RepairDetails,
                                         CreatedUtc = e.CreatedUtc
                                     }
@@ -85,6 +86,7 @@ namespace GarryBoats.Service
                 return ctx.SaveChanges() == 1;
             }
         }
+
         public bool DeleteRepair(int repairId)
         {
             using (var ctx = new ApplicationDbContext())
@@ -93,6 +95,7 @@ namespace GarryBoats.Service
                     ctx
                         .Repairs
                         .Single(e => e.UserId == _userId);
+
                 ctx.Repairs.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

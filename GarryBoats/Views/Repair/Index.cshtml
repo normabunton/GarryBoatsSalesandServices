@@ -1,8 +1,13 @@
 ﻿@model IEnumerable<GarryBoats.Models.RepairListItem>
-
+@{
+    ViewBag.Title = " Index ";
+}
+<h2>List Of Repairs</h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Repair", "Create")
 </p>
+
+
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
@@ -36,13 +41,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.RepairDetails)
             </td>
+            
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedUtc)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.RepairId  }) |
-                @Html.ActionLink("Details", "Details", new {  id=item.RepairId }) |
-                @Html.ActionLink("Delete", "Delete", new {  id=item.RepairId  })
+                @Html.ActionLink("Edit", "Edit", new { id = item.RepairId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.RepairId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.RepairId })
             </td>
         </tr>
     }

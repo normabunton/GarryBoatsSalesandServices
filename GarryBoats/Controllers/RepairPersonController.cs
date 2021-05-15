@@ -36,7 +36,7 @@ namespace GarryBoats.Controllers
             {
                 return View(model);
             }
-            var service = CreateRepairPersonService();
+            var service = CreateRepairPersonsService();
             if (service.CreateRepairPerson(model))
             {
                 TempData["SaveResult"] = "Your Repair Person was created";
@@ -62,6 +62,7 @@ namespace GarryBoats.Controllers
             var model =
                 new RepairPersonEdit
                 {
+                    RepairPersonId = detail.RepairPersonID,
                     RepairPersonName = detail.RepairPersonName,
                     RepairPersonLocation = detail.RepairPersonLocation
                 };
@@ -81,27 +82,13 @@ namespace GarryBoats.Controllers
             }
             return View();
         }
-
-        private RepairPersonService CreateRepairPersonService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new RepairPersonService(userId);
-            return service;
-        }
-
-
-        
-
-
+              
         private RepairPersonService CreateRepairPersonsService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RepairPersonService(userId);
             return service;
         }
-
-       
-       
 
         [ActionName ("Delete")]
         public ActionResult Delete(int id)

@@ -33,7 +33,9 @@ namespace GarryBoats.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(RepairCreate model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid) 
+                
+                return View(model);
             
                 var service = CreateRepairService();
 
@@ -61,6 +63,7 @@ namespace GarryBoats.Controllers
             var model =
                 new RepairEdit
                 {
+                    RepairId = detail.RepairID,
                     RepairDescription = detail.RepairDescription,
                     RepairDetails = detail.RepairDetails,
 

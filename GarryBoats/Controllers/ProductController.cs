@@ -25,11 +25,17 @@ namespace GarryBoats.Controllers
             return View(model);
         }
         //post: Product/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ProductCreate model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid) 
+                
+                return View(model);
 
             var service = CreateProductService();
 
@@ -56,6 +62,7 @@ namespace GarryBoats.Controllers
             var model =
                 new ProductEdit
                 {
+                    //ProductId = detail.ProductId,
                     ProductName = detail.ProductName,
                     ProductDescription = detail.ProductDescription
                 };
@@ -68,8 +75,8 @@ namespace GarryBoats.Controllers
             if (!ModelState.IsValid) return View(model);
             //if (model.ProductId != id)
             //{
-            //    ModelState.AddModelError("", "Id Mismatch");
-            //    return View(model);
+            //   ModelState.AddModelError("", "Id Mismatch");
+            //   return View(model);
             //}
             var service = CreateProductService();
             if (service.UpdateProduct(model))

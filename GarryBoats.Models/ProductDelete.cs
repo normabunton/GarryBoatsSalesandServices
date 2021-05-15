@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace GarryBoats.Models
 {
-    public class ProductEdit
+    public class ProductDelete
     {
-        
         public string ProductName { get; set; }
-        public string ProductDescription { get; set; }
-        public decimal Price { get; set; }
+        public decimal ProductPrice { get; set; }
     }
 }

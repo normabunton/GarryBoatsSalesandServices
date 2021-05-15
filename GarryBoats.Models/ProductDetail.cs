@@ -12,8 +12,9 @@ namespace GarryBoats.Models
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
-        [Display(Name = "Created")]
         public decimal Price { get; set; }
+        public bool IsARepair { get; set; }
+        [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }

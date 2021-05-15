@@ -64,7 +64,8 @@ namespace GarryBoats.Controllers
                 {
                     //ProductId = detail.ProductId,
                     ProductName = detail.ProductName,
-                    ProductDescription = detail.ProductDescription
+                    ProductDescription = detail.ProductDescription,
+                    Price = detail.Price
                 };
             return View(model);
         }

@@ -17,13 +17,13 @@ namespace GarryBoats.Data
         [Required]
         [Display(Name = "Description of Product")]
         public string ProductDescription { get; set; }
-        [Required]
-        [Display(Name = "# In Stock")]
+        //[Required]
+        //[Display(Name = "# In Stock")]
         public int InventoryCount { get; set; }
-        [Required]
+        //[Required]
         public decimal Price { get; set; }
-        [Required]
-        [Display(Name = "It is part of a repair")]
+        //[Required]
+        //[Display(Name = "It is part of a repair")]
         public Boolean IsARepair { get; set; }
 
         public DateTimeOffset CreatedUtc { get; set; }

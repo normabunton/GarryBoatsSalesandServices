@@ -10,24 +10,25 @@ namespace GarryBoats.Service
 {
     public class ProductService
     {
-        private readonly Guid id;
+        private readonly Guid _userId;
 
         public ProductService(Guid userId)
         {
-            id = userId;
+            _userId = userId;
         }
 
         public bool CreateProduct(ProductCreate model)
         {
-            var entity = new Product()
+            var entity = new Product
             {
-                
-                IsARepair = model.IsARepair,
-                ProductDescription = model.Description,
-                InventoryCount = model.InventoryCount,
+
                 ProductName = model.Name,
+                ProductDescription = model.Description,
                 Price = model.Price,
-                CreatedUtc = DateTimeOffset.Now
+                InventoryCount = model.InventoryCount,
+                IsARepair = model.IsARepair,
+                CreatedUtc = DateTimeOffset.Now,
+                ModifiedUtc = null
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -50,6 +51,8 @@ namespace GarryBoats.Service
                                     {
                                         ProductId = e.ProductId,
                                         ProductName = e.ProductName,
+                                        ProductDescription = e.ProductDescription,
+                                        Price = e.Price,
                                         CreatedUtc = e.CreatedUtc
                                     }
                           );
@@ -63,7 +66,7 @@ namespace GarryBoats.Service
                 var entity = ctx
                     .Products
                     .Single(e => e.ProductId == id);
-                return new Models.ProductDetail
+                return new ProductDetail
                 {
                     ProductId = entity.ProductId,
                     ProductName = entity.ProductName,
@@ -80,12 +83,12 @@ namespace GarryBoats.Service
             {
                 var entity = ctx
                     .Products
-                    .Single(e => e.ProductName == Model.ProductName);
+                    .Single(e => e.ProductId == Model.ProductId);
 
                 entity.ProductName = Model.ProductName;
                 entity.ProductDescription = Model.ProductDescription;
                 entity.Price = Model.Price;
-                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+                entity.ModifiedUtc = DateTimeOffset.Now;
 
                 return ctx.SaveChanges() == 1;
             }

@@ -3,7 +3,7 @@ namespace GarryBoats.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class addednew : DbMigration
     {
         public override void Up()
         {
@@ -12,8 +12,8 @@ namespace GarryBoats.Data.Migrations
                 c => new
                     {
                         ProductId = c.Int(nullable: false, identity: true),
-                        ProductName = c.String(nullable: false),
-                        ProductDescription = c.String(nullable: false),
+                        ProductName = c.String(),
+                        ProductDescription = c.String(),
                         InventoryCount = c.Int(nullable: false),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         IsARepair = c.Boolean(nullable: false),
@@ -40,11 +40,8 @@ namespace GarryBoats.Data.Migrations
                     {
                         RepairId = c.Int(nullable: false, identity: true),
                         UserId = c.Guid(nullable: false),
-                        RepairPersonId = c.String(),
                         RepairDetails = c.String(nullable: false),
                         RepairDescription = c.String(nullable: false),
-                        Location = c.String(nullable: false),
-                        Product = c.String(),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })

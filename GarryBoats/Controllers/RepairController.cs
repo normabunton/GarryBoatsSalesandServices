@@ -52,7 +52,7 @@ namespace GarryBoats.Controllers
         {
             var svc = CreateRepairService();
             var model = svc.GetRepairById(id);
-
+           
             return View(model);
         }
 
@@ -72,15 +72,16 @@ namespace GarryBoats.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, RepairEdit model)
+        public ActionResult Edit(RepairEdit model)
         {
             if (!ModelState.IsValid) return View(model);
-            if(model.RepairId != id)
+            var service = CreateRepairService();
+            if (service.UpdateRepair(model))
             {
-                ModelState.AddModelError("", "Id Mismatch");
-                return View(model);
-
+                TempData["SaveResult"] = "Your Repair was updated.";
+                return RedirectToAction("Index");
             }
+            ModelState.AddModelError("", "Your repair could not be updated");
             return View();
         }
         private RepairService CreateRepairService()
@@ -89,9 +90,6 @@ namespace GarryBoats.Controllers
             var service = new RepairService(userId);
             return service;
         }
-
-        
-        
 
         [ActionName("Delete")]
         public ActionResult Delete(int id)

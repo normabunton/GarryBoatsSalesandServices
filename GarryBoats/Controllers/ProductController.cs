@@ -62,7 +62,7 @@ namespace GarryBoats.Controllers
             var model =
                 new ProductEdit
                 {
-                    //ProductId = detail.ProductId,
+                    ProductId = detail.ProductId,
                     ProductName = detail.ProductName,
                     ProductDescription = detail.ProductDescription,
                     Price = detail.Price
@@ -71,7 +71,7 @@ namespace GarryBoats.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, ProductEdit model)
+        public ActionResult Edit(ProductEdit model)
         {
             if (!ModelState.IsValid) return View(model);
             //if (model.ProductId != id)
@@ -110,7 +110,7 @@ namespace GarryBoats.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int id)
+        public ActionResult DeleteProduct(int id)
         {
             var service = CreateProductService();
             service.DeleteProduct(id);

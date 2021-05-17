@@ -7,13 +7,13 @@ namespace GarryBoats.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class update : IMigrationMetadata
+    public sealed partial class addednew : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(update));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addednew));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105131938229_update"; }
+            get { return "202105151818401_addednew"; }
         }
         
         string IMigrationMetadata.Source

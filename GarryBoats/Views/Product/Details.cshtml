@@ -40,16 +40,39 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CreatedUtc)
+            @Html.DisplayFor(model => model.CreatedUtc.Date)
         </dd>
+        @if (Model.ModifiedUtc == null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedUtc)
+            </dt>
+            <dd>
+                <p>
+                    Not Modified
+                </p>
+            </dd>
+        }
+        else
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedUtc)
+            </dt>
 
-        <dt>
+            <dd>
+                <p>
+                    @Model.ModifiedUtc.ToString()
+                </p>
+            </dd>
+        };
+
+        @*<dt>
             @Html.DisplayNameFor(model => model.ModifiedUtc)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.ModifiedUtc)
-        </dd>
+        </dd>*@
 
     </dl>
 </div>

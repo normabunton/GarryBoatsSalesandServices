@@ -8,7 +8,14 @@ namespace GarryBoats.Models
 {
     public class ProductDelete
     {
+        public int ProductId { get; set; }
         public string ProductName { get; set; }
-        public decimal ProductPrice { get; set; }
+        public string ProductDescription { get; set; }
+        public decimal Price { get; set; }
+        public bool IsARepair { get; set; }
+        
+        public DateTimeOffset CreatedUtc { get; set; }
+       
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

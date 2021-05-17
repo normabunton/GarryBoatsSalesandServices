@@ -37,6 +37,7 @@ namespace GarryBoats.Controllers
                 return View(model);
             }
             var service = CreateRepairPersonsService();
+
             if (service.CreateRepairPerson(model))
             {
                 TempData["SaveResult"] = "Your Repair Person was created";
@@ -70,16 +71,16 @@ namespace GarryBoats.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit (int id, RepairPersonEdit model)
+        public ActionResult Edit (RepairPersonEdit model)
         {
             if (!ModelState.IsValid) return View(model);
-
-            if (model.RepairPersonId != id)
+            var service = CreateRepairPersonsService();
+            if (service.UpdateRepairPerson(model))
             {
-                ModelState.AddModelError("", "Repair Person could not be edited");
-
-                return View(model);
+                TempData["SaveResult"] = "Your RepairPerson was updated.";
+                return RedirectToAction("Index");
             }
+            ModelState.AddModelError("", "Your RepairPerson could not be updated");
             return View();
         }
               

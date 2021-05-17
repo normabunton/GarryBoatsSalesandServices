@@ -10,13 +10,7 @@
     <h4>RepairPersonDetail</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.RepairPersonID)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.RepairPersonID)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.RepairPersonName)
@@ -39,16 +33,31 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CreatedUtc)
+            @Html.DisplayFor(model => model.CreatedUtc.Date)
         </dd>
+        @if (Model.ModifiedUtc == null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedUtc)
+            </dt>
+            <dd>
+                <p>
+                    Not Modified
+                </p>
+            </dd>
+        }
+        else
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedUtc)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedUtc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedUtc)
-        </dd>
+            <dd>
+                <p>
+                    @Model.ModifiedUtc.ToString()
+                </p>
+            </dd>
+        };
 
     </dl>
 </div>

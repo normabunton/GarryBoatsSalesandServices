@@ -1,4 +1,4 @@
-﻿@model GarryBoats.Models.RepairPersonDetail
+﻿@model GarryBoats.Models.RepairPersonDelete
 
 @{
     ViewBag.Title = "Delete";
@@ -11,6 +11,14 @@
     <h4>RepairPersonDetail</h4>
     <hr />
     <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RepairPersonId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepairPersonId)
+        </dd>
 
 
         <dt>
